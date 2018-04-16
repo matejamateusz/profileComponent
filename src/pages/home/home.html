@@ -1,14 +1,44 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+    <div class="profileDiv" ion-fixed>
+        <ion-icon class="profileShareIcon" name="share-alt" (click)="shareTapped()"></ion-icon>
+        <ion-img class="img-circle" src="{{profile?.image}}" align="middle"></ion-img>
+        <div class="profile">
+        <span class="profileName">{{profile?.name}} <ion-icon ios="ios-heart-outline" md="md-heart-outline"
+                                                              class="profileHeart" (click)="favIconTapped()"></ion-icon></span>
+            <span class="profileLocation">{{profile?.location}}</span>
+        </div>
+        <br>
+        <div class="profileShare">
+            <span class="profileShareNr">{{likesNr}}<br><span class="profileShareText">Likes</span></span>
+            <span class="profileShareNr">{{followingNr}}<br><span
+                    class="profileShareText">Following</span></span>
+            <span class="profileShareNr">{{followersNr}}<br><span
+                    class="profileShareText">Followers</span></span>
+            <button class="buttonFollow" ion-button round (click)="followTapped()">Follow</button>
+        </div>
+    </div>
+
+    <div class="commentsDiv">
+        <span class="hideComments" (click)="onButtonClick()">Show/Hide comments (353)</span>
+        <div *ngIf="buttonClicked">
+            <ion-card-content *ngFor="let comment of comments">
+                <ion-img class="img-circle" src="{{comment?.image}}" align="middle"></ion-img>
+                <div class="commentDetails">
+                    <span class="commentName">{{comment?.name}}</span>
+                    <span class="commentDate">1d</span>
+                </div>
+                <span class="commentContent">{{comment?.content}}</span>
+
+            </ion-card-content>
+        </div>
+    </div>
 </ion-content>
+<ion-footer>
+    <ion-item>
+        <ion-label color="primary" floating>Add a comment</ion-label>
+        <ion-input [(ngModel)]="inputComment" (keyup.enter)="getComment()"></ion-input>
+    </ion-item>
+</ion-footer>
