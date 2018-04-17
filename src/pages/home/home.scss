@@ -1,4 +1,31 @@
 page-home {
+
+    @media only screen and (max-width: 990px)
+    {
+        .buttonFollow {
+            width: 100%;
+        }
+
+        .profileDiv img {
+            position: absolute;
+            top: -1.5em;
+            margin: auto;
+            left: 0;
+            right: 0;
+
+        }
+
+        .profile {
+            position: absolute;
+            left: 33%;
+            top: 25%;
+        }
+
+        .profileShare {
+            margin-top: 2.5em !important;
+            text-align: center;
+        }
+    }
     ion-header {
         min-height: 95px;
         max-width: 50%;
@@ -92,6 +119,12 @@ page-home {
         padding: 0 1em 0 0;
         margin: 0.5em;
         border-right: 1px solid rgba(151, 151, 151, 0.1);
+
+
+    }
+
+    .profileShareNr:nth-child(3) {
+        border-right: 0!important;
     }
 
     .buttonFollow {
@@ -164,11 +197,11 @@ page-home {
         font-size: 14px;
         color: #002C71;
         letter-spacing: 0;
+        float: right;
+        margin-top: 1.7em;
     }
 
     .commentDetails {
-        display: inline-flex;
-        justify-content: space-between;
-        width: 80%;
+        display: inline;
     }
 }
