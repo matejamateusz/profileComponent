@@ -10,8 +10,8 @@ import { DataService } from '../../providers/dataService';
 export class HomePage {
 
     localPath: string = '/assets/data.json';
-    profile: Array;
-    comments: Array;
+    profile: [];
+    comments: [];
     inputComment: string;
     likesNr: number;
     followingNr: number;
@@ -36,7 +36,7 @@ export class HomePage {
         let newComment = {
             name: "Mike Ross",
             content: this.inputComment,
-            image: "/assets/image_harvey.jpg",
+            image: "assets/image_harvey.jpg",
             datePublished: "2018-04-14T12:42:47.487Z"
         };
         this.comments.push(newComment);
