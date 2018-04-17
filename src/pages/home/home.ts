@@ -10,8 +10,8 @@ import { DataService } from '../../providers/dataService';
 export class HomePage {
 
     localPath: string = '/assets/data.json';
-    profile: [];
-    comments: [];
+    profile: Array<any>;
+    comments: Array<any>;
     inputComment: string;
     likesNr: number;
     followingNr: number;
