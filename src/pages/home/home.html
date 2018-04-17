@@ -4,7 +4,7 @@
 <ion-content padding>
     <div class="profileDiv" ion-fixed>
         <ion-icon class="profileShareIcon" name="share-alt" (click)="shareTapped()"></ion-icon>
-        <ion-img class="img-circle" src="{{profile?.image}}" align="middle"></ion-img>
+        <img class="img-circle" src="{{profile?.image}}" align="middle"/>
         <div class="profile">
         <span class="profileName">{{profile?.name}} <ion-icon ios="ios-heart-outline" md="md-heart-outline"
                                                               class="profileHeart" (click)="favIconTapped()"></ion-icon></span>
@@ -25,7 +25,7 @@
         <span class="hideComments" (click)="onButtonClick()">Show/Hide comments (353)</span>
         <div *ngIf="buttonClicked">
             <ion-card-content *ngFor="let comment of comments">
-                <ion-img class="img-circle" src="{{comment?.image}}" align="middle"></ion-img>
+                <img class="img-circle" src="{{comment?.image}}" align="middle"/>
                 <div class="commentDetails">
                     <span class="commentName">{{comment?.name}}</span>
                     <span class="commentDate">1d</span>
